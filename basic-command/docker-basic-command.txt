@@ -34,3 +34,7 @@ sudo docker volume ls
         > apt install git -y
         > git clone https://github.com/wahidKhan74/phase4-bootstrap-website.git
         > cp -r phase4-bootstrap-website/*  /var/www/html
+
+# Login inot a running container
+sudo docker exec -it webserver /bin/bash
+
