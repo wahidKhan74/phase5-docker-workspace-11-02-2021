@@ -1,0 +1,10 @@
+step 1: create a CI server (Jenkins)
+        > create ec2
+        > install jdk and maven
+        > install jenkins 
+        > configure jenkins 
+        
+step 2: Create a dcoker server 
+step 3: Configure a pipeline 
+        > Manual Configure 
+        > Jenkins File Configuration

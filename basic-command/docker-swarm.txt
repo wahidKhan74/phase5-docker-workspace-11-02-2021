@@ -1,0 +1,42 @@
+# pull docker images
+> sudo docker pull wahid74/phpcode
+> sudo docker pull wahid74/phpcode:v1.0.0
+> sudo docker pull wahid74/ecom-webservice
+> sudo docker pull wahid74/ecom-webservice:v1.0.0
+
+# first initialize a docker swarm cluster
+> sudo docker swarm init
+
+# verify created cluster
+> sudo docker node ls 
+
+# add working node
+> sudo docker swarm join --token SWMTKN-1-5z7az4aov7ai13ytlgzk7qk7pf4y25uylvzeryncmn0im8w9k2-472jcwupyp2jri77vpcc9df1h 172.31.18.7:2377
+
+# add mananger node
+> sudo docker swarm join-token manager
+
+# deploy docker swarm mananger based container.
+> sudo docker service create -p 80:80 --name php-service wahid74/phpcode
+
+# list service
+> sudo docker service ls
+
+# list containers
+> sudo docker ps -a
+-------------------------------------------------------------------------
+
+# deploy docker swarm mananger based container.
+> sudo docker service create -p 8080:8081 --name ecom-service wahid74/ecom-webservice
+
+# list service
+> sudo docker service ls
+
+# list containers
+> sudo docker ps -a
+
+--------------------------------
+# docker swarm destroy
+> sudo docker service rm <service-name>
+> sudo docker swarm leave
+> sudo docker swarm leave --force
